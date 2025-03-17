@@ -8,7 +8,6 @@ class SignInController extends GetxController {
   final TextEditingController passwordController = TextEditingController();
 
   void login() {
-    // Validasi login
     if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
       Get.offAll(() => MainMenu()); 
       Get.snackbar('Success', 'Login successful',

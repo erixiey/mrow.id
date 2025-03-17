@@ -13,7 +13,6 @@ class MainMenu extends StatefulWidget {
 class _MainMenuState extends State<MainMenu> {
   int _selectedIndex = 0;
 
-  // Daftar halaman yang akan ditampilkan di Bottom Navigation Bar
   final List<Widget> _pages = [
     const HomeScreen(),
     const CafeScreen(),
@@ -30,15 +29,15 @@ class _MainMenuState extends State<MainMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: _pages[_selectedIndex], // Tampilkan halaman yang dipilih
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
-        showSelectedLabels: false, // Hilangkan label saat item dipilih
-        showUnselectedLabels: false, // Hilangkan label saat item tidak dipilih
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
         items: const [
           BottomNavigationBarItem(
             icon: SizedBox(
@@ -51,7 +50,7 @@ class _MainMenuState extends State<MainMenu> {
               height: 40,
               child: ImageIcon(AssetImage('assets/icons/homeblack.png')),
             ),
-            label: '', // Label tetap diperlukan tapi tidak ditampilkan
+            label: '',
           ),
           BottomNavigationBarItem(
             icon: SizedBox(
