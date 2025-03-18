@@ -21,17 +21,29 @@ class MainMenu extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Obx(
         () => AnimatedSwitcher(
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 800),
           transitionBuilder: (Widget child, Animation<double> animation) {
+            // Efek kreatif: Slide dari bawah dengan fade
             return SlideTransition(
               position: Tween<Offset>(
-                begin: const Offset(1.0, 0.0),
+                begin: const Offset(0, 0.25), // Mulai dari bawah
                 end: Offset.zero,
-              ).animate(animation),
-              child: child,
+              ).animate(
+                CurvedAnimation(
+                  parent: animation,
+                  curve: Curves.easeInOutCubic,
+                ),
+              ),
+              child: FadeTransition(
+                opacity: Tween<double>(begin: 0, end: 1).animate(animation),
+                child: child,
+              ),
             );
           },
-          child: pages[controller.selectedIndex.value],
+          child: KeyedSubtree(
+            key: ValueKey<int>(controller.selectedIndex.value),
+            child: pages[controller.selectedIndex.value],
+          ),
         ),
       ),
       bottomNavigationBar: Obx(

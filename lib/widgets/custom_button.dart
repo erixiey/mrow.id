@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mrowid/colors/color.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  CustomButton({required this.text, required this.onPressed});
+  const CustomButton({required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +15,17 @@ class CustomButton extends StatelessWidget {
         height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.black, // Bisa diganti ke AppColors.black2b jika diinginkan
           borderRadius: BorderRadius.circular(4),
         ),
         child: Center(
           child: Text(
             text,
             style: TextStyle(
+              fontFamily: 'Gilroy',
               fontSize: 18,
-              fontWeight: FontWeight.w600,
-              color: Colors.white,
+              fontWeight: FontWeight.w600, // Semibold
+              color: AppColors.whiteff,
             ),
           ),
         ),
