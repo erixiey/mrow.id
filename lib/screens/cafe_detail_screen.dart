@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/typography/typography.dart';
 import '../controllers/cafe_detail_controller.dart';
+import '../widgets/booking_bottom_sheet.dart';
 
 class CafeDetailScreen extends StatelessWidget {
   final String name;
@@ -24,7 +25,6 @@ class CafeDetailScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header
                 Container(
                   height: 60,
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -68,7 +68,6 @@ class CafeDetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // Box Gambar
                 Container(
                   height: 205,
                   width: double.infinity,
@@ -77,7 +76,6 @@ class CafeDetailScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // Judul Tables
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 20),
                   child: Text(
@@ -97,7 +95,6 @@ class CafeDetailScreen extends StatelessWidget {
                   color: const Color(0xFFD9D9D9),
                   margin: const EdgeInsets.symmetric(horizontal: 20),
                 ),
-                // List Table
                 Expanded(
                   child: ListView.builder(
                     itemCount: 5,
@@ -114,7 +111,6 @@ class CafeDetailScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                // Floating Button LOAD MORE
                 Center(
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 25),
@@ -122,7 +118,7 @@ class CafeDetailScreen extends StatelessWidget {
                       width: 80,
                       height: 24,
                       decoration: BoxDecoration(
-                        color: const Color(0xFF2B2A2B), // black2b
+                        color: const Color(0xFF2B2A2B),
                         borderRadius: BorderRadius.circular(100),
                       ),
                       child: Center(
@@ -134,7 +130,6 @@ class CafeDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Button Booking
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                   child: SizedBox(
@@ -142,10 +137,16 @@ class CafeDetailScreen extends StatelessWidget {
                     height: 61,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Tambahkan logika untuk tombol Booking di sini
+                        Get.bottomSheet(
+                          const BookingBottomSheet(),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          backgroundColor: Colors.white,
+                        );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF2B2A2B), // black2b
+                        backgroundColor: const Color(0xFF2B2A2B),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),

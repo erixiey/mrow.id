@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mrowid/typography/typography.dart';
-import 'package:mrowid/screens/cafe_detail_screen.dart'; // Impor halaman detail
+import 'package:mrowid/screens/cafe_detail_screen.dart';
+import '../controllers/cafe_controller.dart';
 
 class CafeScreen extends StatelessWidget {
   const CafeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final CafeController controller = Get.put(CafeController());
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -16,7 +20,7 @@ class CafeScreen extends StatelessWidget {
             // Header
             Container(
               height: 60,
-              color: const Color(0xFF2B2A2B), // black2b
+              color: const Color(0xFF2B2A2B),
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,19 +54,19 @@ class CafeScreen extends StatelessWidget {
             // Box Besar dengan Stack
             Container(
               height: 200,
-              width: double.infinity, // Mentok ke pinggir layar
-              color: const Color(0xFF2B2A2B), // black2b
+              width: double.infinity,
+              color: const Color(0xFF2B2A2B),
               child: Center(
                 child: Stack(
                   alignment: Alignment.center,
-                  clipBehavior: Clip.none, // Mencegah pemotongan anak
+                  clipBehavior: Clip.none,
                   children: [
                     Container(
                       width: 119.50,
                       height: 34.56,
                       decoration: BoxDecoration(
                         color: const Color(0xFF373231),
-                        borderRadius: BorderRadius.circular(20), // Lonjong
+                        borderRadius: BorderRadius.circular(20),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +77,7 @@ class CafeScreen extends StatelessWidget {
                               fontFamily: 'Roboto',
                               fontWeight: FontWeight.bold,
                               fontSize: 16.75,
-                              color: Color(0xFFFFFFFF), // whiteff
+                              color: Color(0xFFFFFFFF),
                             ),
                           ),
                           const SizedBox(width: 5),
@@ -118,9 +122,7 @@ class CafeScreen extends StatelessWidget {
                     ],
                   ),
                   GestureDetector(
-                    onTap: () {
-                    
-                    },
+                    onTap: controller.showFilterBottomSheet,
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 0),
                       child: Image.asset(
@@ -180,7 +182,7 @@ class CafeScreen extends StatelessWidget {
         width: 80,
         height: 24,
         decoration: BoxDecoration(
-          color: const Color(0xFF2B2A2B), // black2b
+          color: const Color(0xFF2B2A2B),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
@@ -197,15 +199,7 @@ class CafeScreen extends StatelessWidget {
   Widget _buildCafeItem(String name, String likes, String location, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CafeDetailScreen(
-              name: name,
-              location: location,
-            ),
-          ),
-        );
+        Get.to(() => CafeDetailScreen(name: name, location: location));
       },
       child: Column(
         children: [
@@ -277,7 +271,7 @@ class CafeScreen extends StatelessWidget {
           ),
           Container(
             height: 1,
-            color: const Color(0xFFD9D9D9), // grayd9
+            color: const Color(0xFFD9D9D9),
             margin: const EdgeInsets.symmetric(horizontal: 25),
           ),
         ],

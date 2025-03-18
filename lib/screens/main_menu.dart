@@ -1,84 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mrowid/screens/home_screen.dart';
 import 'package:mrowid/screens/cafe_screen.dart';
 import 'package:mrowid/screens/profile_screen.dart';
+import '../controllers/main_menu_controller.dart';
 
-class MainMenu extends StatefulWidget {
+class MainMenu extends StatelessWidget {
   const MainMenu({super.key});
 
   @override
-  State<MainMenu> createState() => _MainMenuState();
-}
-
-class _MainMenuState extends State<MainMenu> {
-  int _selectedIndex = 0;
-
-  final List<Widget> _pages = [
-    const HomeScreen(),
-    const CafeScreen(),
-    const ProfileScreen(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final MainMenuController controller = Get.put(MainMenuController());
+    final List<Widget> pages = [
+      const HomeScreen(),
+      const CafeScreen(),
+      const ProfileScreen(),
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: const [
-          BottomNavigationBarItem(
-            icon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/homegray.png')),
+      body: Obx(
+        () => AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          transitionBuilder: (Widget child, Animation<double> animation) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(1.0, 0.0),
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            );
+          },
+          child: pages[controller.selectedIndex.value],
+        ),
+      ),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          backgroundColor: Colors.white,
+          currentIndex: controller.selectedIndex.value,
+          onTap: controller.changePage,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.grey,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: const [
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/homegray.png')),
+              ),
+              activeIcon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/homeblack.png')),
+              ),
+              label: '',
             ),
-            activeIcon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/homeblack.png')),
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/cafegray.png')),
+              ),
+              activeIcon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/cafeblack.png')),
+              ),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/cafegray.png')),
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/profilegray.png')),
+              ),
+              activeIcon: SizedBox(
+                width: 24,
+                height: 40,
+                child: ImageIcon(AssetImage('assets/icons/profileblack.png')),
+              ),
+              label: '',
             ),
-            activeIcon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/cafeblack.png')),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/profilegray.png')),
-            ),
-            activeIcon: SizedBox(
-              width: 24,
-              height: 40,
-              child: ImageIcon(AssetImage('assets/icons/profileblack.png')),
-            ),
-            label: '',
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
