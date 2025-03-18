@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mrowid/screens/term_condition_screen.dart';
 import 'package:mrowid/screens/privacy_policy_screen.dart';
 import 'package:mrowid/screens/sign_in_screen.dart';
+import 'package:mrowid/screens/history_screen.dart';
 import 'package:mrowid/colors/color.dart';
 
 class SettingsList extends StatelessWidget {
@@ -14,56 +15,59 @@ class SettingsList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Column(
         children: [
-          Container(
-            height: 65,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: AppColors.grayd9,
-                  width: 1,
+          GestureDetector(
+            onTap: () => Get.to(() => const HistoryScreen()),
+            child: Container(
+              height: 65,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: AppColors.grayd9,
+                    width: 1,
+                  ),
                 ),
               ),
-            ),
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/icons/history.png',
-                  width: 24,
-                  height: 24,
-                ),
-                const SizedBox(width: 10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'History',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black2b,
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/history.png',
+                    width: 24,
+                    height: 24,
+                  ),
+                  const SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'History',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.black2b,
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Check out your history outfit',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w300,
-                        color: AppColors.gray94,
+                      Text(
+                        'Check out your history outfit',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w300,
+                          color: AppColors.gray94,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const Spacer(),
-                Image.asset(
-                  'assets/icons/arrow_gray.png',
-                  width: 24,
-                  height: 24,
-                ),
-              ],
+                    ],
+                  ),
+                  const Spacer(),
+                  Image.asset(
+                    'assets/icons/arrow_gray.png',
+                    width: 24,
+                    height: 24,
+                  ),
+                ],
+              ),
             ),
           ),
           const SizedBox(height: 5),
@@ -324,7 +328,7 @@ class SettingsList extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.back(); // Tutup dialog
+                          Get.back();
                           Get.snackbar(
                             'Success',
                             'You have successfully logged out',
