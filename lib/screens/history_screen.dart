@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mrowid/screens/history_detail_screen.dart';
 import 'package:mrowid/colors/color.dart';
 
 class HistoryScreen extends StatelessWidget {
@@ -64,63 +65,66 @@ class HistoryScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
                   children: [
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/avatar.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: () => Get.to(() => const HistoryDetailScreen()),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/icons/avatar.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Arnold Joseph',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black2b,
+                                  ),
+                                ),
+                                Text(
+                                  'Konga Cafe - Table 02',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.gray94,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                'Arnold Joseph',
+                                '12 June 2024',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Gilroy',
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.black2b,
                                 ),
                               ),
                               Text(
-                                'Konga Cafe - Table 02',
+                                '09:42 AM',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Gilroy',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.gray94,
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '12 June 2024',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black2b,
-                              ),
-                            ),
-                            Text(
-                              '09:42 AM',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Divider(
@@ -128,63 +132,66 @@ class HistoryScreen extends StatelessWidget {
                       thickness: 1,
                     ),
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/avatar.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: () => Get.to(() => const HistoryDetailScreen()),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/icons/avatar.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Arnold Joseph',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black2b,
+                                  ),
+                                ),
+                                Text(
+                                  'Konga Cafe - Table 02',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.gray94,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                'Arnold Joseph',
+                                '13 June 2024',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Gilroy',
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.black2b,
                                 ),
                               ),
                               Text(
-                                'Konga Cafe - Table 02',
+                                '10:15 AM',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Gilroy',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.gray94,
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '13 June 2024',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black2b,
-                              ),
-                            ),
-                            Text(
-                              '10:15 AM',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Divider(
@@ -192,63 +199,66 @@ class HistoryScreen extends StatelessWidget {
                       thickness: 1,
                     ),
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/avatar.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: () => Get.to(() => const HistoryDetailScreen()),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/icons/avatar.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Arnold Joseph',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black2b,
+                                  ),
+                                ),
+                                Text(
+                                  'Konga Cafe - Table 02',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.gray94,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                'Arnold Joseph',
+                                '14 June 2024',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Gilroy',
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.black2b,
                                 ),
                               ),
                               Text(
-                                'Konga Cafe - Table 02',
+                                '02:30 PM',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Gilroy',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.gray94,
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '14 June 2024',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black2b,
-                              ),
-                            ),
-                            Text(
-                              '02:30 PM',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Divider(
@@ -256,63 +266,66 @@ class HistoryScreen extends StatelessWidget {
                       thickness: 1,
                     ),
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/avatar.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: () => Get.to(() => const HistoryDetailScreen()),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/icons/avatar.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Arnold Joseph',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black2b,
+                                  ),
+                                ),
+                                Text(
+                                  'Konga Cafe - Table 02',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.gray94,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                'Arnold Joseph',
+                                '15 June 2024',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Gilroy',
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.black2b,
                                 ),
                               ),
                               Text(
-                                'Konga Cafe - Table 02',
+                                '08:00 AM',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Gilroy',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.gray94,
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '15 June 2024',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black2b,
-                              ),
-                            ),
-                            Text(
-                              '08:00 AM',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Divider(
@@ -320,63 +333,66 @@ class HistoryScreen extends StatelessWidget {
                       thickness: 1,
                     ),
                     const SizedBox(height: 10),
-                    Row(
-                      children: [
-                        Image.asset(
-                          'assets/icons/avatar.png',
-                          width: 40,
-                          height: 40,
-                        ),
-                        const SizedBox(width: 10),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    GestureDetector(
+                      onTap: () => Get.to(() => const HistoryDetailScreen()),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/icons/avatar.png',
+                            width: 40,
+                            height: 40,
+                          ),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Arnold Joseph',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.black2b,
+                                  ),
+                                ),
+                                Text(
+                                  'Konga Cafe - Table 02',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w300,
+                                    color: AppColors.gray94,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
-                                'Arnold Joseph',
+                                '16 June 2024',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
+                                  fontFamily: 'Gilroy',
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.black2b,
                                 ),
                               ),
                               Text(
-                                'Konga Cafe - Table 02',
+                                '11:45 AM',
                                 style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w300,
+                                  fontFamily: 'Gilroy',
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
                                   color: AppColors.gray94,
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '16 June 2024',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black2b,
-                              ),
-                            ),
-                            Text(
-                              '11:45 AM',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Divider(

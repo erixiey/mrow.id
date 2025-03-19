@@ -32,8 +32,8 @@ class SettingsList extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/icons/history.png',
-                    width: 24,
-                    height: 24,
+                    width: 35,
+                    height: 35,
                   ),
                   const SizedBox(width: 10),
                   Column(
@@ -63,8 +63,8 @@ class SettingsList extends StatelessWidget {
                   const Spacer(),
                   Image.asset(
                     'assets/icons/arrow_gray.png',
-                    width: 24,
-                    height: 24,
+                    width: 18,
+                    height: 18,
                   ),
                 ],
               ),
@@ -86,8 +86,8 @@ class SettingsList extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/icons/key.png',
-                  width: 24,
-                  height: 24,
+                  width: 35,
+                  height: 35,
                 ),
                 const SizedBox(width: 10),
                 Column(
@@ -117,8 +117,8 @@ class SettingsList extends StatelessWidget {
                 const Spacer(),
                 Image.asset(
                   'assets/icons/arrow_gray.png',
-                  width: 24,
-                  height: 24,
+                  width: 18,
+                  height: 18,
                 ),
               ],
             ),
@@ -139,8 +139,8 @@ class SettingsList extends StatelessWidget {
               children: [
                 Image.asset(
                   'assets/icons/idcard.png',
-                  width: 24,
-                  height: 24,
+                  width: 35,
+                  height: 35,
                 ),
                 const SizedBox(width: 10),
                 Column(
@@ -170,8 +170,8 @@ class SettingsList extends StatelessWidget {
                 const Spacer(),
                 Image.asset(
                   'assets/icons/arrow_gray.png',
-                  width: 24,
-                  height: 24,
+                  width: 18,
+                  height: 18,
                 ),
               ],
             ),
@@ -194,8 +194,8 @@ class SettingsList extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/icons/term.png',
-                    width: 24,
-                    height: 24,
+                    width: 35,
+                    height: 35,
                   ),
                   const SizedBox(width: 10),
                   Column(
@@ -225,8 +225,8 @@ class SettingsList extends StatelessWidget {
                   const Spacer(),
                   Image.asset(
                     'assets/icons/arrow_gray.png',
-                    width: 24,
-                    height: 24,
+                    width: 18,
+                    height: 18,
                   ),
                 ],
               ),
@@ -250,8 +250,8 @@ class SettingsList extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/icons/lock.png',
-                    width: 24,
-                    height: 24,
+                    width: 35,
+                    height: 35,
                   ),
                   const SizedBox(width: 10),
                   Column(
@@ -281,8 +281,8 @@ class SettingsList extends StatelessWidget {
                   const Spacer(),
                   Image.asset(
                     'assets/icons/arrow_gray.png',
-                    width: 24,
-                    height: 24,
+                    width: 18,
+                    height: 18,
                   ),
                 ],
               ),
@@ -375,8 +375,8 @@ class SettingsList extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/icons/logout.png',
-                    width: 24,
-                    height: 24,
+                    width: 35,
+                    height: 35,
                   ),
                   const SizedBox(width: 10),
                   Column(
@@ -406,8 +406,8 @@ class SettingsList extends StatelessWidget {
                   const Spacer(),
                   Image.asset(
                     'assets/icons/arrow_gray.png',
-                    width: 24,
-                    height: 24,
+                    width: 18,
+                    height: 18,
                   ),
                 ],
               ),
