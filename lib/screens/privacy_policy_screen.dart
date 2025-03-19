@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/Get.dart';
 import 'package:mrowid/colors/color.dart';
+import 'package:mrowid/typography/typography.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
@@ -33,21 +34,11 @@ class PrivacyPolicyScreen extends StatelessWidget {
                       children: [
                         Text(
                           'Privacy Policy',
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.black2b,
-                          ),
+                          style: Font.bold.fs14.black2b(),
                         ),
                         Text(
                           'please read carefully',
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.black2b,
-                          ),
+                          style: Font.medium.fs10.black2b(),
                         ),
                       ],
                     ),
@@ -67,55 +58,30 @@ class PrivacyPolicyScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Welcome to mrow.id!',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.semiBold.fs12.black2b(),
                     ),
                     const SizedBox(height: 9),
                     Text(
                       'These terms and conditions outline the rules and regulations for the use of MROW\'s Website, located at mrow.id.\n\n'
                       'By accessing this website we assume you accept these terms and conditions. Do not continue to use mrow.id if you do not agree to take all of the terms and conditions stated on this page.\n\n'
                       'The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the Company\'s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company. "Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner for the express purpose of meeting the Client\'s needs in respect of provision of the Company\'s stated services, in accordance with and subject to, prevailing law of id. Any use of the above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as interchangeable and therefore as referring to same.',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.regular.fs10.black2b(),
                     ),
                     const SizedBox(height: 9),
                     Text(
                       'Cookies',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.semiBold.fs10.black2b(),
                     ),
                     const SizedBox(height: 9),
                     Text(
                       'We employ the use of cookies. By accessing mrow.id, you agreed to use cookies in agreement with the MROW\'s Privacy Policy.\n\n'
                       'Most interactive websites use cookies to let us retrieve the user\'s details for each visit. Cookies are used by our website to enable the functionality of certain areas to make it easier for people visiting our website. Some of our affiliate/advertising partners may also use cookies.',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.regular.fs10.black2b(),
                     ),
                     const SizedBox(height: 9),
                     Text(
                       'License',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.semiBold.fs10.black2b(),
                     ),
                     const SizedBox(height: 9),
                     Text(
@@ -127,12 +93,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
                       '- Redistribute content from mrow.id\n\n'
                       'This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the Free Terms and Conditions Generator.\n\n'
                       'Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website.',
-                      style: TextStyle(
-                        fontFamily: 'Gilroy',
-                        fontSize: 10,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.black2b,
-                      ),
+                      style: Font.regular.fs10.black2b(),
                     ),
                   ],
                 ),

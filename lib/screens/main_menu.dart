@@ -23,10 +23,9 @@ class MainMenu extends StatelessWidget {
         () => AnimatedSwitcher(
           duration: const Duration(milliseconds: 800),
           transitionBuilder: (Widget child, Animation<double> animation) {
-            // Efek kreatif: Slide dari bawah dengan fade
             return SlideTransition(
               position: Tween<Offset>(
-                begin: const Offset(0, 0.25), // Mulai dari bawah
+                begin: const Offset(0, 0.25), 
                 end: Offset.zero,
               ).animate(
                 CurvedAnimation(

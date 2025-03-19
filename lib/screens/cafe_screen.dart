@@ -2,10 +2,243 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/screens/cafe_detail_screen.dart';
+import 'package:mrowid/screens/random_screen.dart';
+import 'package:mrowid/widgets/custom_button.dart';
 import '../controllers/cafe_controller.dart';
 
 class CafeScreen extends StatelessWidget {
   const CafeScreen({super.key});
+
+  void _showRollBottomSheet(BuildContext context) {
+    bool isWeekendChecked = false;
+    bool isPremiumChecked = false;
+    bool isTermsChecked = false;
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (BuildContext context) {
+        return StatefulBuilder(
+          builder: (BuildContext context, StateSetter setState) {
+            return SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 15),
+                  Center(
+                    child: Image.asset(
+                      'assets/icons/bar.png',
+                      width: 40,
+                      height: 4,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Text(
+                    'Random Options',
+                    style: TextStyle(
+                      fontFamily: 'Gilroy',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF2B2A2B),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Divider(
+                    color: const Color(0xFFD9D9D9),
+                    thickness: 1,
+                    height: 0,
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Dateing Date',
+                        style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xFF2B2A2B),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Container(
+                      height: 44,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color(0xFFD9D9D9), width: 1),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  'assets/icons/calendar.png',
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                const SizedBox(width: 10),
+                                Text(
+                                  'Select time',
+                                  style: TextStyle(
+                                    fontFamily: 'Gilroy',
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                    color: const Color(0xFF2B2A2B),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Image.asset(
+                              'assets/icons/arrow_down.png',
+                              width: 20,
+                              height: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Divider(
+                      color: const Color(0xFFDDDADA),
+                      thickness: 1,
+                      height: 0,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isWeekendChecked = !isWeekendChecked;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            isWeekendChecked ? 'assets/icons/checkbox.png' : 'assets/icons/uncheckbox.png',
+                            width: 20,
+                            height: 20,
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            'It\'s okay on weekend',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: isWeekendChecked ? const Color(0xFF2B2A2B) : const Color(0xFF949494),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isPremiumChecked = !isPremiumChecked;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            isPremiumChecked ? 'assets/icons/checkbox.png' : 'assets/icons/uncheckbox.png',
+                            width: 20,
+                            height: 20,
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            'Random Premium',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: isPremiumChecked ? const Color(0xFF2B2A2B) : const Color(0xFF949494),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isTermsChecked = !isTermsChecked;
+                        });
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            isTermsChecked ? 'assets/icons/checkbox.png' : 'assets/icons/uncheckbox.png',
+                            width: 20,
+                            height: 20,
+                          ),
+                          const SizedBox(width: 10),
+                          Text(
+                            'I agree with terms conditions and privacy policy',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: isTermsChecked ? const Color(0xFF2B2A2B) : const Color(0xFF949494),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: CustomButton(
+                      text: 'Random',
+                      onPressed: () {
+                        Get.back(); // Tutup bottom sheet
+                        Get.to(() => const RandomScreen()); // Pindah ke RandomScreen
+                      },
+                      backgroundColor: const Color(0xFF2B2A2B),
+                      textStyle: TextStyle(
+                        fontFamily: 'Gilroy',
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +250,6 @@ class CafeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Header
             Container(
               height: 60,
               color: const Color(0xFF2B2A2B),
@@ -51,7 +283,6 @@ class CafeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // Box Besar dengan Stack
             Container(
               height: 200,
               width: double.infinity,
@@ -61,32 +292,35 @@ class CafeScreen extends StatelessWidget {
                   alignment: Alignment.center,
                   clipBehavior: Clip.none,
                   children: [
-                    Container(
-                      width: 119.50,
-                      height: 34.56,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF373231),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'ROLL',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.75,
-                              color: Color(0xFFFFFFFF),
+                    GestureDetector(
+                      onTap: () => _showRollBottomSheet(context),
+                      child: Container(
+                        width: 119.50,
+                        height: 34.56,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF373231),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'ROLL',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.75,
+                                color: Color(0xFFFFFFFF),
+                              ),
                             ),
-                          ),
-                          const SizedBox(width: 5),
-                          Image.asset(
-                            'assets/icons/shuffle.png',
-                            width: 16,
-                            height: 16,
-                          ),
-                        ],
+                            const SizedBox(width: 5),
+                            Image.asset(
+                              'assets/icons/shuffle.png',
+                              width: 16,
+                              height: 16,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Positioned(
@@ -102,7 +336,6 @@ class CafeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // Judul dan Filter
             Padding(
               padding: const EdgeInsets.only(left: 25, top: 20, right: 25),
               child: Row(
@@ -135,7 +368,6 @@ class CafeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // List Cafe
             Expanded(
               child: SingleChildScrollView(
                 child: Column(

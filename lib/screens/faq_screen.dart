@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/colors/color.dart';
+import 'package:mrowid/typography/typography.dart';
 
 class FaqScreen extends StatefulWidget {
   const FaqScreen({super.key});
@@ -68,21 +69,11 @@ class _FaqScreenState extends State<FaqScreen> {
                     children: [
                       Text(
                         'FAQ',
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.black2b,
-                        ),
+                        style: Font.bold.fs14.black2b(),
                       ),
                       Text(
                         'Please read for more information',
-                        style: TextStyle(
-                          fontFamily: 'Gilroy',
-                          fontSize: 10,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.gray94,
-                        ),
+                        style: Font.medium.fs10.gray94(),
                       ),
                     ],
                   ),
@@ -170,7 +161,7 @@ class _FaqScreenState extends State<FaqScreen> {
                                     style: TextStyle(
                                       fontFamily: 'Outfit',
                                       fontSize: 12,
-                                      fontWeight: FontWeight.w300, // light
+                                      fontWeight: FontWeight.w300,
                                       color: AppColors.gray94,
                                     ),
                                   ),

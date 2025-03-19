@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/screens/history_detail_screen.dart';
 import 'package:mrowid/colors/color.dart';
+import 'package:mrowid/typography/typography.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
@@ -34,21 +35,11 @@ class HistoryScreen extends StatelessWidget {
                       children: [
                         Text(
                           'History',
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.black2b,
-                          ),
+                          style: Font.bold.fs14.black2b(),
                         ),
                         Text(
                           'Transaction History',
-                          style: TextStyle(
-                            fontFamily: 'Gilroy',
-                            fontSize: 10,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.black2b,
-                          ),
+                          style: Font.medium.fs10.black2b(),
                         ),
                       ],
                     ),
@@ -105,21 +96,11 @@ class HistoryScreen extends StatelessWidget {
                             children: [
                               Text(
                                 '12 June 2024',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.regular.fs12.black2b(),
                               ),
                               Text(
                                 '09:42 AM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs10.gray94(),
                               ),
                             ],
                           ),
@@ -172,21 +153,11 @@ class HistoryScreen extends StatelessWidget {
                             children: [
                               Text(
                                 '13 June 2024',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.regular.fs12.black2b(),
                               ),
                               Text(
                                 '10:15 AM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs10.gray94(),
                               ),
                             ],
                           ),
@@ -239,21 +210,11 @@ class HistoryScreen extends StatelessWidget {
                             children: [
                               Text(
                                 '14 June 2024',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.regular.fs12.black2b(),
                               ),
                               Text(
                                 '02:30 PM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs10.gray94(),
                               ),
                             ],
                           ),
@@ -306,21 +267,11 @@ class HistoryScreen extends StatelessWidget {
                             children: [
                               Text(
                                 '15 June 2024',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.regular.fs12.black2b(),
                               ),
                               Text(
                                 '08:00 AM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs10.gray94(),
                               ),
                             ],
                           ),
@@ -373,21 +324,11 @@ class HistoryScreen extends StatelessWidget {
                             children: [
                               Text(
                                 '16 June 2024',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.regular.fs12.black2b(),
                               ),
                               Text(
                                 '11:45 AM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs10.gray94(),
                               ),
                             ],
                           ),

@@ -32,12 +32,7 @@ class HistoryDetailScreen extends StatelessWidget {
                 const SizedBox(height: 15),
                 Text(
                   'Rate Your Mate',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.bold.fs18.black2b(),
                 ),
                 Divider(
                   color: AppColors.grayd9,
@@ -54,30 +49,15 @@ class HistoryDetailScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Brian Adams',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.semiBold.fs16.black2b(),
                 ),
                 Text(
                   'Give your judgement about your partner.',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.medium.fs12.black2b(),
                 ),
                 Text(
                   'Please choose your vote',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.gray94,
-                  ),
+                  style: Font.medium.fs12.gray94(),
                 ),
                 const SizedBox(height: 20),
                 Divider(
@@ -94,12 +74,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     width: 24,
                     height: 24,
                   ),
-                  textStyle: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.whiteff,
-                  ),
+                  textStyle: Font.semiBold.fs18.whiteff(),
                 ),
                 const SizedBox(height: 10),
                 CustomButton(
@@ -112,12 +87,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     width: 24,
                     height: 24,
                   ),
-                  textStyle: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black2b,
-                  ),
+                  textStyle: Font.semiBold.fs18.black2b(),
                 ),
                 const SizedBox(height: 20),
               ],
@@ -153,12 +123,7 @@ class HistoryDetailScreen extends StatelessWidget {
                 const SizedBox(height: 15),
                 Text(
                   'Rate Cafe',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.bold.fs18.black2b(),
                 ),
                 Divider(
                   color: AppColors.grayd9,
@@ -175,30 +140,15 @@ class HistoryDetailScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text(
                   'Konga Cafe',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.semiBold.fs16.black2b(),
                 ),
                 Text(
                   'Give your assessment of your date\'s',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.black2b,
-                  ),
+                  style: Font.medium.fs12.black2b(),
                 ),
                 Text(
                   'venue, Please choose your vote',
-                  style: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.gray94,
-                  ),
+                  style: Font.medium.fs12.gray94(),
                 ),
                 const SizedBox(height: 20),
                 Divider(
@@ -215,12 +165,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     width: 24,
                     height: 24,
                   ),
-                  textStyle: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.whiteff,
-                  ),
+                  textStyle: Font.semiBold.fs18.whiteff(),
                 ),
                 const SizedBox(height: 10),
                 CustomButton(
@@ -233,12 +178,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     width: 24,
                     height: 24,
                   ),
-                  textStyle: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black2b,
-                  ),
+                  textStyle: Font.semiBold.fs18.black2b(),
                 ),
                 const SizedBox(height: 20),
               ],
@@ -280,23 +220,13 @@ class HistoryDetailScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Cafe',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.whiteff,
-                                ),
+                                style: Font.bold.fs14.whiteff(),
                               ),
                               SizedBox(
                                 width: 200,
                                 child: Text(
                                   'Jl. Duren Tiga Selatan No. 813 Duren Tiga, Pancoran, Jakarta Selatan, DKI Jakarta',
-                                  style: TextStyle(
-                                    fontFamily: 'Gilroy',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.gray94,
-                                  ),
+                                  style: Font.medium.fs10.gray94(),
                                   overflow: TextOverflow.ellipsis,
                                 ),
                               ),
@@ -326,21 +256,11 @@ class HistoryDetailScreen extends StatelessWidget {
                         children: [
                           Text(
                             'Detail Transaction',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black2b,
-                            ),
+                            style: Font.semiBold.fs16.black2b(),
                           ),
                           Text(
                             'Here is the information about your transaction.',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.gray94,
-                            ),
+                            style: Font.medium.fs12.gray94(),
                           ),
                         ],
                       ),
@@ -366,21 +286,11 @@ class HistoryDetailScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Table',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.semiBold.fs10.black2b(),
                               ),
                               Text(
                                 'Table Number Information',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.medium.fs12.gray94(),
                               ),
                             ],
                           ),
@@ -429,21 +339,11 @@ class HistoryDetailScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Date Mate',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.semiBold.fs10.black2b(),
                               ),
                               Text(
                                 'Your date\'s information',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.medium.fs12.gray94(),
                               ),
                             ],
                           ),
@@ -460,12 +360,7 @@ class HistoryDetailScreen extends StatelessWidget {
                                 const SizedBox(width: 10),
                                 Text(
                                   'Brian Adams',
-                                  style: TextStyle(
-                                    fontFamily: 'Gilroy',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black2b,
-                                  ),
+                                  style: Font.regular.fs10.black2b(),
                                 ),
                               ],
                             ),
@@ -489,21 +384,11 @@ class HistoryDetailScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Dating Date',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.semiBold.fs10.black2b(),
                               ),
                               Text(
                                 'Your date time information',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.medium.fs12.gray94(),
                               ),
                             ],
                           ),
@@ -515,12 +400,7 @@ class HistoryDetailScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   '12 June 2024, 09:42 AM',
-                                  style: TextStyle(
-                                    fontFamily: 'Gilroy',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black2b,
-                                  ),
+                                  style: Font.regular.fs10.black2b(),
                                 ),
                               ],
                             ),
@@ -544,21 +424,11 @@ class HistoryDetailScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Total Payment',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w600,
-                                  color: AppColors.black2b,
-                                ),
+                                style: Font.semiBold.fs10.black2b(),
                               ),
                               Text(
                                 'Total tokens paid for the date',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.medium.fs12.gray94(),
                               ),
                             ],
                           ),
@@ -570,12 +440,7 @@ class HistoryDetailScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   '675 Token',
-                                  style: TextStyle(
-                                    fontFamily: 'Gilroy',
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black2b,
-                                  ),
+                                  style: Font.regular.fs10.black2b(),
                                 ),
                               ],
                             ),
@@ -599,12 +464,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     text: 'Rate Your Mate',
                     onPressed: () => _showRateMateBottomSheet(context),
                     backgroundColor: AppColors.black2b,
-                    textStyle: TextStyle(
-                      fontFamily: 'Gilroy',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.whiteff,
-                    ),
+                    textStyle: Font.semiBold.fs18.whiteff(),
                   ),
                   const SizedBox(height: 10),
                   CustomButton(
@@ -612,12 +472,7 @@ class HistoryDetailScreen extends StatelessWidget {
                     onPressed: () => _showRateCafeBottomSheet(context),
                     backgroundColor: AppColors.whiteff,
                     borderColor: AppColors.black2b,
-                    textStyle: TextStyle(
-                      fontFamily: 'Gilroy',
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black2b,
-                    ),
+                    textStyle: Font.semiBold.fs18.black2b(),
                   ),
                 ],
               ),

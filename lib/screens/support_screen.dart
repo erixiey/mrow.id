@@ -4,6 +4,7 @@ import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/controllers/support_controller.dart';
 import 'package:mrowid/screens/faq_screen.dart';
 import 'package:mrowid/widgets/custom_button.dart';
+import 'package:mrowid/typography/typography.dart';
 
 class SupportScreen extends StatelessWidget {
   const SupportScreen({super.key});
@@ -31,12 +32,7 @@ class SupportScreen extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 'Ping!',
-                style: TextStyle(
-                  fontFamily: 'Gilroy',
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.black2b,
-                ),
+                style: Font.bold.fs18.black2b(),
               ),
               const SizedBox(height: 15),
               Divider(
@@ -53,30 +49,15 @@ class SupportScreen extends StatelessWidget {
               const SizedBox(height: 25.76),
               Text(
                 'Admin Has Pinged',
-                style: TextStyle(
-                  fontFamily: 'Gilroy',
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.black2b,
-                ),
+                style: Font.semiBold.fs16.black2b(),
               ),
               Text(
                 'Please wait. Your message has been sent',
-                style: TextStyle(
-                  fontFamily: 'Gilroy',
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.gray94,
-                ),
+                style: Font.medium.fs12.gray94(),
               ),
               Text(
                 'for immediate processing by Admin.',
-                style: TextStyle(
-                  fontFamily: 'Gilroy',
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.gray94,
-                ),
+                style: Font.medium.fs12.gray94(),
               ),
               const SizedBox(height: 20),
               Divider(
@@ -91,12 +72,7 @@ class SupportScreen extends StatelessWidget {
                   text: 'Close',
                   onPressed: () => Get.back(),
                   backgroundColor: AppColors.black2b,
-                  textStyle: TextStyle(
-                    fontFamily: 'Gilroy',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.whiteff,
-                  ),
+                  textStyle: Font.semiBold.fs18.whiteff(),
                 ),
               ),
               const SizedBox(height: 20),
@@ -138,21 +114,11 @@ class SupportScreen extends StatelessWidget {
                         children: [
                           Text(
                             'Support',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.black2b,
-                            ),
+                            style: Font.bold.fs14.black2b(),
                           ),
                           Text(
                             'Tell me what your problem',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 10,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.gray94,
-                            ),
+                            style: Font.medium.fs10.gray94(),
                           ),
                         ],
                       ),
@@ -204,12 +170,7 @@ class SupportScreen extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Text(
                               'Today',
-                              style: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.black31,
-                              ),
+                              style: Font.regular.fs12.black31(),
                             ),
                           ),
                           Expanded(
@@ -245,23 +206,13 @@ class SupportScreen extends StatelessWidget {
                                 ),
                                 child: Text(
                                   'Hi Jake, how are you? I saw on the app that we’ve crossed paths several times this week 😄',
-                                  style: TextStyle(
-                                    fontFamily: 'Gilroy',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                    color: AppColors.black2b,
-                                  ),
+                                  style: Font.regular.fs12.black2b(),
                                 ),
                               ),
                               const SizedBox(height: 5),
                               Text(
                                 '2:55 PM',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.regular.fs12.gray94(),
                               ),
                             ],
                           ),
@@ -311,12 +262,7 @@ class SupportScreen extends StatelessWidget {
                                           if (msg['text'].isNotEmpty)
                                             Text(
                                               msg['text'],
-                                              style: TextStyle(
-                                                fontFamily: 'Gilroy',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: AppColors.black2b,
-                                              ),
+                                              style: Font.regular.fs12.black2b(),
                                             ),
                                         ],
                                       ),
@@ -328,12 +274,7 @@ class SupportScreen extends StatelessWidget {
                                     children: [
                                       Text(
                                         msg['time'],
-                                        style: TextStyle(
-                                          fontFamily: 'Gilroy',
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: AppColors.gray94,
-                                        ),
+                                        style: Font.regular.fs12.gray94(),
                                       ),
                                       if (msg['isUser']) const SizedBox(width: 5),
                                       if (msg['isUser'])
@@ -420,19 +361,9 @@ class SupportScreen extends StatelessWidget {
                               border: InputBorder.none,
                               contentPadding: const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 12),
                               hintText: 'Type your message...',
-                              hintStyle: TextStyle(
-                                fontFamily: 'Gilroy',
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColors.gray94,
-                              ),
+                              hintStyle: Font.regular.fs12.gray94(),
                             ),
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.black2b,
-                            ),
+                            style: Font.regular.fs12.black2b(),
                           ),
                         ),
                       ),

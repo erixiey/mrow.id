@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mrowid/widgets/transaction_box.dart';
 import 'package:mrowid/widgets/custom_button.dart';
 import 'package:mrowid/colors/color.dart';
+import 'package:mrowid/typography/typography.dart';
 
 class UpgradeScreen extends StatelessWidget {
   const UpgradeScreen({super.key});
@@ -38,21 +39,11 @@ class UpgradeScreen extends StatelessWidget {
                             children: [
                               Text(
                                 'Upgrade',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.whiteff,
-                                ),
+                                style: Font.bold.fs14.whiteff(),
                               ),
                               Text(
                                 'Upgrade your membership plan',
-                                style: TextStyle(
-                                  fontFamily: 'Gilroy',
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.gray94,
-                                ),
+                                style: Font.medium.fs10.gray94(),
                               ),
                             ],
                           ),
@@ -87,21 +78,11 @@ class UpgradeScreen extends StatelessWidget {
                         children: [
                           Text(
                             'Detail Transaction',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black2b,
-                            ),
+                            style: Font.semiBold.fs18.black2b(),
                           ),
                           Text(
                             'Here is the information about your transaction.',
-                            style: TextStyle(
-                              fontFamily: 'Gilroy',
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.gray94,
-                            ),
+                            style: Font.medium.fs12.gray94(),
                           ),
                         ],
                       ),
@@ -155,6 +136,8 @@ class UpgradeScreen extends StatelessWidget {
               child: CustomButton(
                 text: 'Confirm Payment',
                 onPressed: () {},
+                backgroundColor: AppColors.black2b,
+                textStyle: Font.semiBold.fs18.whiteff(),
               ),
             ),
           ],
