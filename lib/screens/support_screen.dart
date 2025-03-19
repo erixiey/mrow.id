@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/controllers/support_controller.dart';
+import 'package:mrowid/screens/faq_screen.dart';
 import 'package:mrowid/widgets/custom_button.dart';
 
 class SupportScreen extends StatelessWidget {
@@ -46,8 +47,8 @@ class SupportScreen extends StatelessWidget {
               const SizedBox(height: 35.76),
               Image.asset(
                 'assets/icons/ping.png',
-                width: 100,
-                height: 100,
+                width: 80,
+                height: 80,
               ),
               const SizedBox(height: 25.76),
               Text(
@@ -159,10 +160,13 @@ class SupportScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Image.asset(
-                        'assets/icons/faq.png',
-                        width: 30,
-                        height: 30,
+                      GestureDetector(
+                        onTap: () => Get.to(() => const FaqScreen()),
+                        child: Image.asset(
+                          'assets/icons/faq.png',
+                          width: 30,
+                          height: 30,
+                        ),
                       ),
                       const SizedBox(width: 10),
                       GestureDetector(
