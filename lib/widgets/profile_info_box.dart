@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/colors/color.dart';
+import 'package:mrowid/screens/support_screen.dart'; // Impor halaman Support
 
 class ProfileInfoBox extends StatelessWidget {
   final VoidCallback? onUpgradePressed;
@@ -26,10 +28,13 @@ class ProfileInfoBox extends StatelessWidget {
                     clipBehavior: Clip.none,
                     alignment: Alignment.center,
                     children: [
-                      Image.asset(
-                        'assets/icons/avatar_profile.png',
-                        width: 85,
-                        height: 85,
+                      GestureDetector(
+                        onTap: () => Get.to(() => const SupportScreen()),
+                        child: Image.asset(
+                          'assets/icons/avatar_profile.png',
+                          width: 85,
+                          height: 85,
+                        ),
                       ),
                       Positioned(
                         bottom: -10,

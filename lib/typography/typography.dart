@@ -148,6 +148,7 @@ class FontColors {
   late FontColor whiteff = FontColor(color: AppColors.whiteff, style: style);
   late FontColor yellow70 = FontColor(color: AppColors.yellow70, style: style);
   late FontColor grayf6 = FontColor(color: AppColors.grayf6, style: style);
+  late FontColor black31 = FontColor(color: AppColors.black31, style: style);
   late FontColor red = FontColor(color: AppColors.red, style: style);
 
   FontColor color(int color) {
