@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/widgets/custom_button.dart';
+import 'package:mrowid/widgets/table_number_widget.dart';
 import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 
@@ -297,27 +298,9 @@ class HistoryDetailScreen extends StatelessWidget {
                           const Spacer(),
                           Padding(
                             padding: const EdgeInsets.only(right: 20),
-                            child: Container(
-                              width: 45,
-                              height: 45,
-                              decoration: BoxDecoration(
-                                color: AppColors.black2b,
-                                borderRadius: BorderRadius.circular(4.09),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    '01',
-                                    style: Font.semiBold.fs8.whiteff(),
-                                  ),
-                                  Image.asset(
-                                    'assets/icons/chairwhite.png',
-                                    width: 20.45,
-                                    height: 11.43,
-                                  ),
-                                ],
-                              ),
+                            child: TableNumberWidget(
+                              tableNumber: '01',
+                              isInteractive: false, // Statis untuk HistoryDetailScreen
                             ),
                           ),
                         ],

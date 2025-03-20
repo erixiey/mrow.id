@@ -7,8 +7,7 @@ import 'package:mrowid/widgets/custom_button.dart';
 import 'package:mrowid/widgets/text_field_template.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
-
-  ForgotPasswordScreen({super.key});
+  const ForgotPasswordScreen({super.key});
 
   @override
   State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
@@ -21,45 +20,50 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Image.asset(
-                  'assets/icons/logo.png',
-                  width: 126,
-                  height: 126,
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 40.52),
+                    Center(
+                      child: Image.asset(
+                        'assets/icons/logo.png',
+                        width: 126,
+                        height: 126,
+                      ),
+                    ),
+                    const SizedBox(height: 30.52),
+                    Text(
+                      'Forgot Password',
+                      style: Font.bold.fs16.black2b(),
+                    ),
+                    Text(
+                      'Enter email, we will send a password reset link to your email',
+                      style: Font.regular.fs12.gray94(),
+                    ),
+                    const SizedBox(height: 15),
+                    TextFieldTemplate(
+                      label: 'Email',
+                      controller: controller.emailController,
+                      onChanged: (value) => controller.emailController.text = value,
+                    ),
+                    const SizedBox(height: 15),
+                    CustomButton(
+                      text: 'Send Link',
+                      onPressed: () => Get.to(() => ResetPasswordScreen()),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 30.52),
-              Text(
-                'Forgot Password',
-                style: Font.bold.fs16.black2b(),
-              ),
-              Text(
-                'Enter email, we will send a password reset link to your email',
-                style: Font.regular.fs12.gray94(),
-              ),
-              const SizedBox(height: 15),
-              TextFieldTemplate(
-                label: 'Email',
-                controller: controller.emailController,
-                onChanged: (value) => controller.emailController.text = value,
-              ),
-              const SizedBox(height: 15),
-              CustomButton(
-                text: 'Send Link',
-                onPressed: () => Get.to(() => ResetPasswordScreen()),
-              ),
-              const SizedBox(height: 25),
-              Row(
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 25),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -68,7 +72,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   const SizedBox(width: 5),
                   GestureDetector(
-                    onTap: () => Get.to(() => RegisterScreen()),
+                    onTap: () => Get.to(() => const RegisterScreen()),
                     child: Text(
                       'Sign Up!',
                       style: Font.bold.fs12.black2b(),
@@ -76,8 +80,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

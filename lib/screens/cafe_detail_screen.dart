@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/typography/typography.dart';
+import 'package:mrowid/widgets/table_number_widget.dart';
 import '../controllers/cafe_detail_controller.dart';
-import '../widgets/booking_bottom_sheet.dart';
+import 'payment_screen.dart'; // Import PaymentScreen
 
 class CafeDetailScreen extends StatelessWidget {
   final String name;
@@ -137,13 +138,7 @@ class CafeDetailScreen extends StatelessWidget {
                     height: 61,
                     child: ElevatedButton(
                       onPressed: () {
-                        Get.bottomSheet(
-                          const BookingBottomSheet(),
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                          ),
-                          backgroundColor: Colors.white,
-                        );
+                        Get.to(() => const PaymentScreen());
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF2B2A2B),
@@ -180,31 +175,9 @@ class CafeDetailScreen extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: 45,
-                height: 45,
-                decoration: BoxDecoration(
-                  color: isSelected ? const Color(0xFF2B2A2B) : const Color(0xFFFAF6F6),
-                  borderRadius: BorderRadius.circular(4.09),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      tableNumber,
-                      style: isSelected
-                          ? Font.semiBold.fs8.whiteff()
-                          : Font.semiBold.fs8.black2b(),
-                    ),
-                    Image.asset(
-                      isSelected
-                          ? 'assets/icons/chairwhite.png'
-                          : 'assets/icons/chairblack.png',
-                      width: 20.45,
-                      height: 11.43,
-                    ),
-                  ],
-                ),
+              TableNumberWidget(
+                tableNumber: tableNumber,
+                isSelected: isSelected,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 30),

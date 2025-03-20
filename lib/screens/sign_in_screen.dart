@@ -21,68 +21,73 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   elevation: 0,
-      // ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Center(
-                child: Image.asset(
-                  'assets/icons/logo.png',
-                  width: 126,
-                  height: 126,
-                ),
-              ),
-              const SizedBox(height: 30.52),
-              Padding(
-                padding: const EdgeInsets.only(left: 0),
-                child: Text(
-                  'Login',
-                  style: Font.bold.fs16.black2b(),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 0),
-                child: Text(
-                  'Welcome back, Please fill the form for sign in to your account',
-                  style: Font.regular.fs12.gray94(),
-                ),
-              ),
-              const SizedBox(height: 15),
-              TextFieldTemplate(
-                label: 'Email',
-                controller: controller.emailController,
-                onChanged: (value) => controller.emailController.text = value,
-              ),
-              const SizedBox(height: 15),
-              TextFieldTemplate(
-                label: 'Password',
-                controller: controller.passwordController,
-                onChanged: (value) => controller.passwordController.text = value,
-                isPassword: true,
-              ),
-              const SizedBox(height: 15),
-              GestureDetector(
-                onTap: () => Get.to(() => ForgotPasswordScreen()),
-                child: Text(
-                  'Forgot Password?',
-                  style: Font.medium.fs12.gray94().copyWith(
-                        decoration: TextDecoration.underline,
+        child: Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 40.52),
+                    Center(
+                      child: Image.asset(
+                        'assets/icons/logo.png',
+                        width: 126,
+                        height: 126,
                       ),
+                    ),
+                    const SizedBox(height: 30.52),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: Text(
+                        'Login',
+                        style: Font.bold.fs16.black2b(),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: Text(
+                        'Welcome back, Please fill the form for sign in to your account',
+                        style: Font.regular.fs12.gray94(),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    TextFieldTemplate(
+                      label: 'Email',
+                      controller: controller.emailController,
+                      onChanged: (value) => controller.emailController.text = value,
+                    ),
+                    const SizedBox(height: 15),
+                    TextFieldTemplate(
+                      label: 'Password',
+                      controller: controller.passwordController,
+                      onChanged: (value) => controller.passwordController.text = value,
+                      isPassword: true,
+                    ),
+                    const SizedBox(height: 15),
+                    GestureDetector(
+                      onTap: () => Get.to(() => ForgotPasswordScreen()),
+                      child: Text(
+                        'Forgot Password?',
+                        style: Font.medium.fs12.gray94().copyWith(
+                              decoration: TextDecoration.underline,
+                            ),
+                      ),
+                    ),
+                    const SizedBox(height: 15),
+                    CustomButton(
+                      text: 'Login',
+                      onPressed: controller.login,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: 15),
-              CustomButton(
-                text: 'Login',
-                onPressed: controller.login, // Panggil fungsi login dari controller
-              ),
-              const SizedBox(height: 25),
-              Row(
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 25),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -99,8 +104,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

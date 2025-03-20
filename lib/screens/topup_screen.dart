@@ -5,6 +5,7 @@ import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/widgets/custom_button.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:mrowid/screens/payment_waiting_screen.dart';
 import 'dart:io';
 
 class TopupScreen extends StatelessWidget {
@@ -134,7 +135,10 @@ class TopupScreen extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: CustomButton(
                       text: 'Submit',
-                      onPressed: () => Get.back(),
+                      onPressed: () {
+                        Get.back();
+                        Get.to(() => const PaymentWaitingScreen());
+                      },
                       backgroundColor: AppColors.black2b,
                       textStyle: Font.semiBold.fs18.whiteff(),
                     ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mrowid/screens/payment_screen.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/widgets/custom_button.dart';
 import 'package:mrowid/colors/color.dart';
@@ -75,7 +76,7 @@ class RandomFoundScreen extends StatelessWidget {
                     CustomButton(
                       text: ' Agree ',
                       onPressed: () {
-                        Get.back();
+                        Get.off(() => const PaymentScreen());
                         _showNotFoundBottomSheet(context);
                       },
                       backgroundColor: AppColors.black2b,
@@ -258,7 +259,7 @@ class RandomFoundScreen extends StatelessWidget {
                       child: CustomButton(
                         text: 'Accept',
                         onPressed: () {
-                          Get.back();
+                          Get.to(() => const PaymentScreen());
                         },
                         backgroundColor: AppColors.whiteff,
                         textStyle: Font.semiBold.fs18.black2b(),
