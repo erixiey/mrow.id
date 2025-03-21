@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/screens/register_screen.dart';
 import 'package:mrowid/screens/reset_password_screen.dart';
 import 'package:mrowid/widgets/custom_button.dart';
-import 'package:mrowid/widgets/text_field_template.dart';
+import 'package:mrowid/widgets/custom_input.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
@@ -19,7 +20,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.whiteff,
       body: SafeArea(
         child: Column(
           children: [
@@ -47,15 +48,19 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       style: Font.regular.fs12.gray94(),
                     ),
                     const SizedBox(height: 15),
-                    TextFieldTemplate(
+                    Input(
                       label: 'Email',
+                      hint: 'Enter your email',
                       controller: controller.emailController,
                       onChanged: (value) => controller.emailController.text = value,
+                      keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 15),
                     CustomButton(
                       text: 'Send Link',
                       onPressed: () => Get.to(() => ResetPasswordScreen()),
+                      backgroundColor: AppColors.black2b,
+                      textStyle: Font.semiBold.fs18.whiteff(),
                     ),
                   ],
                 ),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mrowid/screens/upgrade_screen.dart';
-import 'package:mrowid/screens/topup_screen.dart'; // Import TopupScreen
+import 'package:mrowid/screens/topup_screen.dart';
 import 'package:mrowid/widgets/profile_info_box.dart';
 import 'package:mrowid/widgets/settings_list.dart';
+import 'package:mrowid/widgets/change_profile_bottom_sheet.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/colors/color.dart';
-
 import '../widgets/custom_button.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -97,7 +97,6 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Header
               Container(
                 height: 60,
                 padding: const EdgeInsets.only(left: 20, right: 20),
@@ -128,18 +127,20 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10, bottom: 15),
-                      child: Image.asset(
-                        'assets/icons/edit.png',
-                        width: 30,
-                        height: 30,
+                    GestureDetector(
+                      onTap: () => showChangeProfileBottomSheet(context), // Menambahkan bottom sheet
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10, bottom: 15),
+                        child: Image.asset(
+                          'assets/icons/edit.png',
+                          width: 30,
+                          height: 30,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-              // Token Box (Desain Lama dengan Modifikasi)
               Container(
                 height: 119,
                 width: double.infinity,
@@ -201,7 +202,7 @@ class ProfileScreen extends StatelessWidget {
                                 const SizedBox(width: 5),
                                 Text(
                                   'Expired in 3 Month',
-                                  style: Font.medium.fs10.black2b(),
+                                  style: Font.medium.fs12.black2b(),
                                 ),
                               ],
                             ),
@@ -213,12 +214,10 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              // Profile Info Box
               ProfileInfoBox(
                 onUpgradePressed: () => Get.to(() => const UpgradeScreen()),
               ),
               const SizedBox(height: 15),
-              // Settings List
               const SettingsList(),
             ],
           ),

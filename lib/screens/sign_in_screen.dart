@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/screens/forgot_password_screen.dart';
 import 'package:mrowid/screens/register_screen.dart';
 import 'package:mrowid/widgets/custom_button.dart';
-import 'package:mrowid/widgets/text_field_template.dart';
+import 'package:mrowid/widgets/custom_input.dart';
 import 'package:mrowid/controllers/sign_in_controller.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.whiteff,
       body: SafeArea(
         child: Column(
           children: [
@@ -39,32 +40,29 @@ class _SignInScreenState extends State<SignInScreen> {
                       ),
                     ),
                     const SizedBox(height: 30.52),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: Text(
-                        'Login',
-                        style: Font.bold.fs16.black2b(),
-                      ),
+                    Text(
+                      'Login',
+                      style: Font.bold.fs16.black2b(),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: Text(
-                        'Welcome back, Please fill the form for sign in to your account',
-                        style: Font.regular.fs12.gray94(),
-                      ),
+                    Text(
+                      'Welcome back, Please fill the form for sign in to your account',
+                      style: Font.regular.fs12.gray94(),
                     ),
                     const SizedBox(height: 15),
-                    TextFieldTemplate(
+                    Input(
                       label: 'Email',
+                      hint: 'Enter your email',
                       controller: controller.emailController,
                       onChanged: (value) => controller.emailController.text = value,
+                      keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 15),
-                    TextFieldTemplate(
+                    Input(
                       label: 'Password',
+                      hint: 'Enter your password',
                       controller: controller.passwordController,
                       onChanged: (value) => controller.passwordController.text = value,
-                      isPassword: true,
+                      obscureText: true,
                     ),
                     const SizedBox(height: 15),
                     GestureDetector(
@@ -80,6 +78,8 @@ class _SignInScreenState extends State<SignInScreen> {
                     CustomButton(
                       text: 'Login',
                       onPressed: controller.login,
+                      backgroundColor: AppColors.black2b,
+                      textStyle: Font.semiBold.fs18.whiteff(),
                     ),
                   ],
                 ),

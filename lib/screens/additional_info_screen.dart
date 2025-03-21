@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:showcaseview/showcaseview.dart';
+import 'package:dotted_border/dotted_border.dart';
 import '../controllers/register_controller.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
@@ -48,59 +49,54 @@ class _AdditionalInfoScreenState extends State<AdditionalInfoScreen> {
       builder: (context) {
         _showcaseContext = context;
         return Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.black),
-              onPressed: () => Get.back(),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 25),
-                child: GestureDetector(
-                  onTap: () {
-                    print('Opening Guide Bottom Sheet in AdditionalInfoScreen');
-                    GuideBottomSheet.show(
-                      context,
-                      onComplete: () {
-                        print('Guide completed, starting showcase in AdditionalInfoScreen');
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          _startShowcase();
-                        });
-                      },
-                    );
-                  },
-                  child: Container(
-                    width: 76,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFAF6F6),
-                      borderRadius: BorderRadius.circular(8.57),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/guide.png', width: 16),
-                        const SizedBox(width: 5),
-                        Text(
-                          'Guide',
-                          style: Font.semiBold.fs12.black2b(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          backgroundColor: AppColors.whiteff,
           body: SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15, right: 0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('Opening Guide Bottom Sheet in AdditionalInfoScreen');
+                            GuideBottomSheet.show(
+                              context,
+                              onComplete: () {
+                                print('Guide completed, starting showcase in AdditionalInfoScreen');
+                                WidgetsBinding.instance.addPostFrameCallback((_) {
+                                  _startShowcase();
+                                });
+                              },
+                            );
+                          },
+                          child: Container(
+                            width: 76,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              color: AppColors.grayf6,
+                              borderRadius: BorderRadius.circular(8.57),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset('assets/icons/guide.png', width: 16),
+                                const SizedBox(width: 5),
+                                Text(
+                                  'Guide',
+                                  style: Font.semiBold.fs12.black2b(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Center(
                     child: Image.asset(
                       'assets/icons/logo.png',
@@ -125,36 +121,34 @@ class _AdditionalInfoScreenState extends State<AdditionalInfoScreen> {
                     child: GestureDetector(
                       onTap: controller.pickImage,
                       child: Obx(
-                        () => Container(
-                          height: 209,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: const Color(0xFFE1D9D9),
-                              style: BorderStyle.solid,
-                              width: 1,
-                              strokeAlign: BorderSide.strokeAlignOutside,
-                            ),
-                            borderRadius: BorderRadius.circular(5),
+                        () => DottedBorder(
+                          borderType: BorderType.RRect,
+                          radius: const Radius.circular(5),
+                          color: AppColors.grayd9,
+                          strokeWidth: 1,
+                          dashPattern: const [4, 4],
+                          child: Container(
+                            height: 209,
+                            width: double.infinity,
+                            child: controller.selectedImage.value == null
+                                ? Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Image.asset('assets/icons/upload.png', width: 42),
+                                      const SizedBox(height: 10),
+                                      Text(
+                                        'Upload Your ID Card',
+                                        style: Font.semiBold.fs12.black2b(),
+                                      ),
+                                      const SizedBox(height: 5),
+                                      Text(
+                                        'Max size: 2MB',
+                                        style: Font.regular.fs12.gray94(),
+                                      ),
+                                    ],
+                                  )
+                                : Image.file(controller.selectedImage.value!, fit: BoxFit.cover),
                           ),
-                          child: controller.selectedImage.value == null
-                              ? Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset('assets/icons/upload.png', width: 42),
-                                    const SizedBox(height: 10),
-                                    Text(
-                                      'Upload Your ID Card',
-                                      style: Font.semiBold.fs12.black2b(),
-                                    ),
-                                    const SizedBox(height: 5),
-                                    Text(
-                                      'Max size: 2MB',
-                                      style: Font.regular.fs12.gray94(),
-                                    ),
-                                  ],
-                                )
-                              : Image.file(controller.selectedImage.value!, fit: BoxFit.cover),
                         ),
                       ),
                     ),
@@ -165,13 +159,11 @@ class _AdditionalInfoScreenState extends State<AdditionalInfoScreen> {
                     title: 'Fill your address',
                     child: Input(
                       label: 'Address',
+                      hint: 'Enter your address',
                       controller: controller.addressController,
                       onChanged: (value) => controller.addressController.text = value,
-                      hintStyle: Font.regular.fs12.gray94(),
-                      labelStyle: Font.semiBold.fs12.black2b(),
-                      fillColor: AppColors.whiteff,
-                      borderColor: const Color(0xFFE1D9D9),
-                      border: true,
+                      maxLines: 5,
+                      isMultiline: true,
                     ),
                   ),
                   const SizedBox(height: 15),
@@ -184,7 +176,7 @@ class _AdditionalInfoScreenState extends State<AdditionalInfoScreen> {
                           () => Checkbox(
                             value: controller.isChecked.value,
                             onChanged: (value) => controller.isChecked.value = value ?? false,
-                            activeColor: Colors.black,
+                            activeColor: AppColors.black2b,
                           ),
                         ),
                         Expanded(
@@ -208,7 +200,27 @@ class _AdditionalInfoScreenState extends State<AdditionalInfoScreen> {
                     child: CustomButton(
                       text: 'Sign Up',
                       onPressed: () => controller.onSignUp(context),
+                      backgroundColor: AppColors.black2b,
+                      textStyle: Font.semiBold.fs18.whiteff(),
                     ),
+                  ),
+                  const SizedBox(height: 34),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: Font.medium.fs12.gray94(),
+                      ),
+                      const SizedBox(width: 5),
+                      GestureDetector(
+                        onTap: () => Get.back(),
+                        child: Text(
+                          'Sign In!',
+                          style: Font.bold.fs12.black2b(),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

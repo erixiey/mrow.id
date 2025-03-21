@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:showcaseview/showcaseview.dart';
-import '../controllers/register_controller.dart';
-import '../widgets/custom_button.dart';
-import '../widgets/custom_input.dart';
-import '../widgets/text_field_template.dart';
-import '../widgets/guide_bottom_sheet.dart';
-import '../widgets/custom_showcase.dart';
-import '../utils/global_key_provider.dart';
+import 'package:mrowid/controllers/register_controller.dart';
+import 'package:mrowid/widgets/custom_button.dart';
+import 'package:mrowid/widgets/custom_input.dart';
+import 'package:mrowid/widgets/custom_phone_input.dart';
+import 'package:mrowid/widgets/guide_bottom_sheet.dart';
+import 'package:mrowid/widgets/custom_showcase.dart';
+import 'package:mrowid/utils/global_key_provider.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -54,55 +54,54 @@ class _RegisterScreenState extends State<RegisterScreen> {
       builder: (context) {
         _showcaseContext = context;
         return Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 25),
-                child: GestureDetector(
-                  onTap: () {
-                    print('Opening Guide Bottom Sheet');
-                    GuideBottomSheet.show(
-                      context,
-                      onComplete: () {
-                        print('Guide completed, starting showcase');
-                        WidgetsBinding.instance.addPostFrameCallback((_) {
-                          _startShowcase();
-                        });
-                      },
-                    );
-                  },
-                  child: Container(
-                    width: 76,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFAF6F6),
-                      borderRadius: BorderRadius.circular(8.57),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/guide.png', width: 16),
-                        const SizedBox(width: 5),
-                        Text(
-                          'Guide',
-                          style: Font.semiBold.fs12.black2b(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+          backgroundColor: AppColors.whiteff,
           body: SafeArea(
             child: SingleChildScrollView(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 15, right: 0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('Opening Guide Bottom Sheet');
+                            GuideBottomSheet.show(
+                              context,
+                              onComplete: () {
+                                print('Guide completed, starting showcase');
+                                WidgetsBinding.instance.addPostFrameCallback((_) {
+                                  _startShowcase();
+                                });
+                              },
+                            );
+                          },
+                          child: Container(
+                            width: 76,
+                            height: 30,
+                            decoration: BoxDecoration(
+                              color: AppColors.grayf6,
+                              borderRadius: BorderRadius.circular(8.57),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset('assets/icons/guide.png', width: 16),
+                                const SizedBox(width: 5),
+                                Text(
+                                  'Guide',
+                                  style: Font.semiBold.fs12.black2b(),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Center(
                     child: Image.asset(
                       'assets/icons/logo.png',
@@ -118,14 +117,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 5),
                   Text(
                     'Register to create your account',
-                    style: Font.medium.fs12.gray94(),
+                    style: Font.regular.fs12.gray94(),
                   ),
                   const SizedBox(height: 15),
                   CustomShowcase(
                     showcaseKey: GlobalKeyProvider.fullNameKey,
                     title: 'Enter your full name',
-                    child: TextFieldTemplate(
+                    child: Input(
                       label: 'Full Name',
+                      hint: 'Enter your full name',
                       controller: controller.fullNameController,
                       onChanged: (value) => controller.fullNameController.text = value,
                     ),
@@ -134,84 +134,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   CustomShowcase(
                     showcaseKey: GlobalKeyProvider.emailKey,
                     title: 'Enter your email',
-                    child: TextFieldTemplate(
+                    child: Input(
                       label: 'Email',
+                      hint: 'Enter your email',
                       controller: controller.emailController,
                       onChanged: (value) => controller.emailController.text = value,
+                      keyboardType: TextInputType.emailAddress,
                     ),
                   ),
                   const SizedBox(height: 15),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Phone Number',
-                        style: Font.semiBold.fs12.black2b(),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Container(
-                            height: 44,
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFE1D9D9),
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(5),
-                                bottomLeft: Radius.circular(5),
-                              ),
-                            ),
-                            child: Row(
-                              children: [
-                                Text(
-                                  '+62',
-                                  style: Font.regular.fs12.black2b(),
-                                ),
-                                const SizedBox(width: 5),
-                                Image.asset('assets/icons/arrowdown.png', width: 12),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: CustomShowcase(
-                              showcaseKey: GlobalKeyProvider.phoneKey,
-                              title: 'Enter your phone number',
-                              child: Input(
-                                controller: controller.phoneController,
-                                onChanged: (value) => controller.phoneController.text = value,
-                                hintStyle: Font.regular.fs12.gray94(),
-                                fillColor: AppColors.whiteff,
-                                borderColor: const Color(0xFFE1D9D9),
-                                border: true,
-                                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
+                  CustomShowcase(
+                    showcaseKey: GlobalKeyProvider.phoneKey,
+                    title: 'Enter your phone number',
+                    child: CustomPhoneInput(
+                      countryCode: controller.countryCode,
+                      updateCountryCode: (code) => controller.countryCode.value = code,
+                      label: 'Phone Number',
+                      hint: 'Enter your phone number',
+                      onChanged: (value) => controller.phoneController.text = value,
+                      phoneController: controller.phoneController,
+                    ),
                   ),
                   const SizedBox(height: 15),
                   CustomShowcase(
                     showcaseKey: GlobalKeyProvider.passwordKey,
                     title: 'Enter your password',
-                    child: TextFieldTemplate(
+                    child: Input(
                       label: 'Password',
+                      hint: 'Enter your password',
                       controller: controller.passwordController,
                       onChanged: (value) => controller.passwordController.text = value,
-                      isPassword: true,
+                      obscureText: true,
                     ),
                   ),
                   const SizedBox(height: 15),
                   CustomShowcase(
                     showcaseKey: GlobalKeyProvider.confirmPasswordKey,
                     title: 'Confirm your password',
-                    child: TextFieldTemplate(
+                    child: Input(
                       label: 'Confirm Password',
+                      hint: 'Confirm your password',
                       controller: controller.confirmPasswordController,
                       onChanged: (value) => controller.confirmPasswordController.text = value,
-                      isPassword: true,
-                      isConfirm: true,
+                      obscureText: true,
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -229,6 +194,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           controller.onContinue();
                         }
                       },
+                      backgroundColor: AppColors.black2b,
+                      textStyle: Font.semiBold.fs18.whiteff(),
                     ),
                   ),
                   const SizedBox(height: 34),

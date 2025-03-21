@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/Get.dart';
+import 'package:get/get.dart';
+import 'package:mrowid/colors/color.dart';
 import 'package:mrowid/typography/typography.dart';
 import 'package:mrowid/screens/register_screen.dart';
 import 'package:mrowid/widgets/custom_button.dart';
-import 'package:mrowid/widgets/text_field_template.dart';
+import 'package:mrowid/widgets/custom_input.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
-  ResetPasswordScreen({super.key}); 
+  ResetPasswordScreen({super.key});
 
   final ResetPasswordController controller = Get.put(ResetPasswordController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.whiteff,
       body: SafeArea(
         child: Column(
           children: [
@@ -41,27 +42,36 @@ class ResetPasswordScreen extends StatelessWidget {
                       style: Font.regular.fs12.gray94(),
                     ),
                     const SizedBox(height: 15),
-                    TextFieldTemplate(
+                    Input(
                       label: 'New Password',
+                      hint: 'Enter new password',
                       controller: controller.newPasswordController,
                       onChanged: (value) => controller.newPasswordController.text = value,
-                      isPassword: true,
+                      obscureText: true,
                     ),
                     const SizedBox(height: 15),
-                    TextFieldTemplate(
+                    Input(
                       label: 'Confirm New Password',
+                      hint: 'Confirm new password',
                       controller: controller.confirmPasswordController,
                       onChanged: (value) => controller.confirmPasswordController.text = value,
-                      isPassword: true,
-                      isConfirm: true,
+                      obscureText: true,
                     ),
                     const SizedBox(height: 15),
                     CustomButton(
                       text: 'Submit',
                       onPressed: () {
-                        Get.snackbar('Success', 'Password reset successful',
-                            backgroundColor: Colors.green, colorText: Colors.white);
+                        Get.snackbar(
+                          'Success',
+                          'Password reset successful',
+                          backgroundColor: AppColors.black2b,
+                          colorText: AppColors.whiteff,
+                          duration: const Duration(seconds: 2),
+                          icon: const Icon(Icons.check_circle, color: AppColors.whiteff),
+                        );
                       },
+                      backgroundColor: AppColors.black2b,
+                      textStyle: Font.semiBold.fs18.whiteff(),
                     ),
                   ],
                 ),
