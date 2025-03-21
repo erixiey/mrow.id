@@ -158,12 +158,17 @@ class _FaqScreenState extends State<FaqScreen> {
                                 children: [
                                   Text(
                                     faqData[index]['content']!,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w300,
-                                      color: AppColors.gray94,
-                                    ),
+                                    style: 
+                                    Font.light.fs12.gray94().copyWith(
+                                    fontFamily:'Outfit'  ,
+                                    
+                                    )
+                                    // TextStyle(
+                                    //   fontFamily: 'Outfit',
+                                    //   fontSize: 12,
+                                    //   fontWeight: FontWeight.w300,
+                                    //   color: AppColors.gray94,
+                                    // ),
                                   ),
                                   const SizedBox(height: 10),
                                   Divider(

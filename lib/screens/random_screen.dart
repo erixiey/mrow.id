@@ -11,24 +11,28 @@ class RandomScreen extends StatefulWidget {
   _RandomScreenState createState() => _RandomScreenState();
 }
 
-class _RandomScreenState extends State<RandomScreen> {
+class _RandomScreenState extends State<RandomScreen> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<int> _dotAnimation;
   String searchingText = 'Searching';
-  late Timer _timer;
 
   @override
+  // fixing manual animate loading
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
+    _animationController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    )..repeat();
+    _dotAnimation = IntTween(begin: 0, end: 3).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeInOut,
+      ),
+    );
+    _dotAnimation.addListener(() {
       setState(() {
-        if (searchingText == 'Searching') {
-          searchingText = 'Searching.';
-        } else if (searchingText == 'Searching.') {
-          searchingText = 'Searching..';
-        } else if (searchingText == 'Searching..') {
-          searchingText = 'Searching...';
-        } else {
-          searchingText = 'Searching';
-        }
+        searchingText = 'Searching${'.' * _dotAnimation.value}';
       });
     });
     Timer(const Duration(milliseconds: 5500), () {
@@ -42,7 +46,7 @@ class _RandomScreenState extends State<RandomScreen> {
 
   @override
   void dispose() {
-    _timer.cancel();
+    _animationController.dispose();
     super.dispose();
   }
 
